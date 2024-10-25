@@ -27,6 +27,9 @@ spec:
         - name: grafana-script
           mountPath: /etc/grafana/provisioning/datasources/datasource.yaml
           subPath: datasource.yaml
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
       volumes:
       - name: grafana-persistent-storage-store
         persistentVolumeClaim:
