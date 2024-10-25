@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: grafana-storage
   capacity:
     storage: 10Gi
   accessModes:

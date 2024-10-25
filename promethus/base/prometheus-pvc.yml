@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: psql-storage-pvc
   labels:
-    vol: psql-storage
+    vol: pprometheus-storage
 spec:
   accessModes:
     - ReadWriteMany
@@ -11,4 +11,4 @@ spec:
     requests:
       storage: 10Gi
   hostPath:
-    path: "/home/jlto/Koce/Minikube/PVs/psql"
+    path: "/home/jlto/Koce/Minikube/PVs/prometheus"
