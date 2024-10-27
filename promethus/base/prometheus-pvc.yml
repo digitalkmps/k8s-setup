@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: psql-storage-pvc
+  name: prometheus-storage-pvc
   labels:
     vol: pprometheus-storage
 spec:
@@ -10,4 +10,4 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: grafana-storage
+  storageClassName: prometheus-storage
