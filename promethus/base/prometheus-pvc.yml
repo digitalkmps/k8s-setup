@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: prometheus-storage-pvc
   labels:
-    vol: pprometheus-storage
+    vol: prometheus-storage
 spec:
   accessModes:
     - ReadWriteMany

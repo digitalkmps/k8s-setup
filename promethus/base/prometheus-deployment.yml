@@ -34,7 +34,7 @@ spec:
       volumes:
       - name: prometheus-persistent-storage-store
         persistentVolumeClaim:
-          claimName: prom-storage-pvc
+          claimName: prometheus-storage-pvc
       - name: prometheus-script
         configMap:
           name: prom-config
