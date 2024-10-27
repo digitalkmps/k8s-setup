@@ -10,5 +10,4 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  hostPath:
-    path: "/home/jlto/Koce/Minikube/PVs/prometheus"
+  storageClassName: grafana-storage
