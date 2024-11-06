@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: psql-storage-pvc
+  name: prometheus-storage-pvc
   labels:
-    vol: psql-storage
+    vol: prometheus-storage
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 10Gi
-  storageClassName: psql-storage
+  storageClassName: prometheus-storage
