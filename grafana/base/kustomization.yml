@@ -6,3 +6,5 @@ resources:
   - grafana-deployment.yml
   - grafana-service.yml
   - grafana-configmap.yml
+  - grafana-pv.yml
+  - grafana-storage-class.yml

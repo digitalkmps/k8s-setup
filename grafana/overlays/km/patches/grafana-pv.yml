@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: prometheus-pv
+  name: grafana-pv
   labels:
     type: local
 spec:
-  storageClassName: prometheus-storage
+  storageClassName: grafana-storage
   capacity:
     storage: 10Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/home/chiauser/Kubernetes/PVs/prometheus"
+    path: "/home/chiauser/Kubernetes/PVs/grafana"

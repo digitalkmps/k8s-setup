@@ -7,5 +7,5 @@ resources:
   - prometheus-service.yml
   - prometheus-configmap.yml
   - prometheus-pvc.yml
-
+  - prometheus-pv.yml
  
