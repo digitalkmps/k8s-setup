@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.34.0 (cbf2835db)
+  labels:
+    io.kompose.service: wms2
+  name: wms2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: wms2
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.34.0 (cbf2835db)
+      labels:
+        io.kompose.service: wms2
+    spec:
+      containers:
+        - command:
+            - /opt/docker/bin/wmscore
+            - "7355"
+          env:
+            - name: NODE1_IP
+              value: wms1
+            - name: NODE1_PORT
+              value: "7345"
+            - name: NODE2_IP
+              value: wms2
+            - name: NODE2_PORT
+              value: "7355"
+            - name: NODE3_IP
+              value: wms3
+            - name: NODE3_PORT
+              value: "7356"
+            - name: NODE_IP
+              value: wms2
+            - name: NODE_PORT
+              value: "7355"
+          image: wms:0.1
+          name: wms2
+          ports:
+            - containerPort: 17355
+              protocol: TCP
+      restartPolicy: Always
