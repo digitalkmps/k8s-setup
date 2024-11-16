@@ -41,7 +41,7 @@ spec:
               value: wms3
             - name: NODE_PORT
               value: "7356"
-          image: wms:0.1
+          image: 192.168.1.50:5555/wms:0.1
           name: wms3
           ports:
             - containerPort: 17356
