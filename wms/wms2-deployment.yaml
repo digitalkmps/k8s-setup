@@ -48,4 +48,6 @@ spec:
           ports:
             - containerPort: 17355
               protocol: TCP
+            - containerPort: 7355
+              protocol: TCP
       restartPolicy: Always
