@@ -10,7 +10,7 @@ metadata:
 spec:
   ports:
     - name: "17356"
-      port: 17356
+      port: 7356
       targetPort: 17356
   selector:
     io.kompose.service: wms3
