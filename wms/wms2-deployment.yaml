@@ -46,4 +46,14 @@ spec:
           ports:
             - containerPort: 17355
               protocol: TCP
+            - containerPort: 7355
+              protocol: TCP  
+          volumeMounts:
+           - mountPath: /dev/shm
+             name: media-driver
       restartPolicy: Always
+      volumes:
+      - name: media-driver
+        emptyDir:
+          medium: Memory
+          name: media-driver
