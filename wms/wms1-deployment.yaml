@@ -5,7 +5,7 @@ metadata:
     kompose.cmd: kompose convert -f docker-compose.yml
     kompose.version: 1.34.0 (cbf2835db)
   labels:
-    io.kompose.service: wms1
+    io.kompose.service: wms2
   name: wms1
 spec:
   replicas: 1
@@ -21,10 +21,9 @@ spec:
         io.kompose.service: wms1
     spec:
       containers:
-        - name: wms1
         - command:
             - /opt/docker/bin/wmscore
-            - "7345"
+            - "7355"
           env:
             - name: NODE1_IP
               value: wms1.default.svc
@@ -39,20 +38,12 @@ spec:
             - name: NODE3_PORT
               value: "7356"
             - name: NODE_IP
-              value: kur
+              value: wms2.default.svc
             - name: NODE_PORT
-              value: "7345"
+              value: "7355"
           image: 192.168.1.50:5555/wms_new:0.2
-          name: wms1
+          name: wms2
           ports:
-            - containerPort: 17345
+            - containerPort: 17355
               protocol: TCP
-        volumeMounts:
-        - mountPath: /dev/shm
-          name: media-driver
       restartPolicy: Always
-      volumes:
-      - name: media-driver
-        emptyDir:
-          medium: Memory
-          name: media-driver
