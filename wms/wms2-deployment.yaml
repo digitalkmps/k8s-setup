@@ -26,19 +26,19 @@ spec:
             - "7355"
           env:
             - name: NODE1_IP
-              value: wms1
+              value: wms1.default.svc
             - name: NODE1_PORT
               value: "7345"
             - name: NODE2_IP
-              value: wms2
+              value: wms2.default.svc
             - name: NODE2_PORT
               value: "7355"
             - name: NODE3_IP
-              value: wms3
+              value: wms3.default.svc
             - name: NODE3_PORT
               value: "7356"
             - name: NODE_IP
-              value: wms2
+              value: wms2.default.svc
             - name: NODE_PORT
               value: "7355"
           image: 192.168.1.50:5555/wms_new:0.2
