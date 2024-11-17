@@ -41,7 +41,7 @@ spec:
               value: wms2
             - name: NODE_PORT
               value: "7355"
-          image: 192.168.1.50:5555/wms:0.1
+          image: 192.168.1.50:5555/wms:0.2
           name: wms2
           ports:
             - containerPort: 17355
