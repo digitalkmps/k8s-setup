@@ -41,7 +41,6 @@ spec:
             - name: NODE_IP
               valueFrom:
                 fieldRef:
-                  apiVersion: v1
                   fieldPath: status.podIP
             - name: NODE_PORT
               value: "7345"
