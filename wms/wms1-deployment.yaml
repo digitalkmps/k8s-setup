@@ -21,6 +21,7 @@ spec:
         io.kompose.service: wms1
     spec:
       containers:
+        - name: wms1
         - command:
             - /opt/docker/bin/wmscore
             - "7345"
@@ -46,4 +47,12 @@ spec:
           ports:
             - containerPort: 17345
               protocol: TCP
+        volumeMounts:
+        - mountPath: /dev/shm
+          name: media-driver
       restartPolicy: Always
+      volumes:
+      - name: media-driver
+        emptyDir:
+          medium: Memory
+          name: media-driver
