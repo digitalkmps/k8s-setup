@@ -46,6 +46,6 @@ spec:
           image: 192.168.1.50:5555/wms_new:0.2
           name: wms2
           ports:
-            - containerPort: 17355
+            - containerPort: 17345
               protocol: TCP
       restartPolicy: Always
