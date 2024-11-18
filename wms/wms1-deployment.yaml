@@ -37,15 +37,15 @@ spec:
               value: wms3.wms.svc
             - name: NODE3_PORT
               value: "7356"
-            - name: NODE_EXT_IP
-              value: wms1.wms.svc              
             - name: NODE_IP
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
             - name: NODE_PORT
               value: "7345"
-          image: 192.168.1.50:5555/wms:0.3.0
+            - name: NODE_EXT_IP
+              value: wms1.wms.svc                  
+          image: 192.168.1.50:5555/wms:0.3.1
           name: wms1
           ports:
             - containerPort: 17345

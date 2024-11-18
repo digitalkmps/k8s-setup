@@ -45,7 +45,7 @@ spec:
               value: "7355"
             - name: NODE_EXT_IP
               value: wms2.wms.svc              
-          image: 192.168.1.50:5555/wms:0.3.0
+          image: 192.168.1.50:5555/wms:0.3.1
           name: wms2
           ports:
             - containerPort: 17355
