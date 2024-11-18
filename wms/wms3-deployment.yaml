@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - command:
-            - /opt/docker/bin/wmscore
+            - /opt/docker/bin/wms-core
             - "7356"
           env:
             - name: NODE1_IP
