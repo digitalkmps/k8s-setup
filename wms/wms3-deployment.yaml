@@ -43,7 +43,9 @@ spec:
                   fieldPath: status.podIP
             - name: NODE_PORT
               value: "7356"
-          image: 192.168.1.50:5555/wms_new:0.2
+            - name: NODE_EXT_IP
+              value: wms3.wms.svc              
+          image: 192.168.1.50:5555/wms:0.3.0
           name: wms3
           ports:
             - containerPort: 17356
