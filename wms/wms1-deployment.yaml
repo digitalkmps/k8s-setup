@@ -21,28 +21,31 @@ spec:
         io.kompose.service: wms1
     spec:
       containers:
-        - name: wms1
         - command:
-            - /opt/docker/bin/wmscore
+            - /opt/docker/bin/wms-core
             - "7345"
           env:
             - name: NODE1_IP
-              value: wms1.default.svc
+              value: wms1.wms.svc
             - name: NODE1_PORT
               value: "7345"
             - name: NODE2_IP
-              value: wms2.default.svc
+              value: wms2.wms.svc
             - name: NODE2_PORT
               value: "7355"
             - name: NODE3_IP
-              value: wms3.default.svc
+              value: wms3.wms.svc
             - name: NODE3_PORT
               value: "7356"
             - name: NODE_IP
-              value: kur
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
             - name: NODE_PORT
               value: "7345"
-          image: 192.168.1.50:5555/wms_new:0.2
+            - name: NODE_EXT_IP
+              value: wms1.wms.svc                  
+          image: 192.168.1.50:5555/wms_1:0.3.2
           name: wms1
           ports:
             - containerPort: 17345
