@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: rest1
+  name: rest1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: rest1
+  template:
+    metadata:
+      labels:
+        io.kompose.service: rest1
+    spec:
+      containers:
+        - name: rest1
+          image: 192.168.1.50:5555/wmsrest:0.1
+          env:
+            - name: WMS_IP
+              value: wms1.wms.svc
+            - name: WMS_PORT
+              value: "17345"             
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+      restartPolicy: Always
