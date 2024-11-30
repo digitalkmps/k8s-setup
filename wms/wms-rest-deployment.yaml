@@ -16,11 +16,11 @@ spec:
     spec:
       containers:
         - name: rest1
-          image: 192.168.1.50:5555/wmsrest:0.1
+          image: 192.168.1.50:5555/wmsrest:0.2
           env:
-            - name: WMS_IP
+            - name: WMS_CORE_IP
               value: wms1.wms.svc
-            - name: WMS_PORT
+            - name: WMS_CORE_PORT
               value: "17345"             
           ports:
             - containerPort: 3000
