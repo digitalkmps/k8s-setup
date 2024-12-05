@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: rest1
-          image: 192.168.1.50:5555/wmsrest:0.2
+          image: 192.168.1.50:5555/wmsrest:0.3
           env:
             - name: WMS_CORE_IP
               value: wms1.wms.svc
