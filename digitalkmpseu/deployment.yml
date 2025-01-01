@@ -18,16 +18,12 @@ spec:
         ports:
         - containerPort: 8080
         volumeMounts:
-        - name: webpage-cert
+        - name: webpage-certs
           mountPath: /etc/nginx/ssl
-          subPath: digitalkmpseu.csr
-        - name: webpage-key
-          mountPath: /etc/nginx/ssl
-          subPath: digitalkmpseu.key
         securityContext:
           allowPrivilegeEscalation: false
           runAsUser: 0  
       volumes:
-      - name: webpage-cert
+      - name: webpage-certs
         secret:
           secretName: webpage-certs
