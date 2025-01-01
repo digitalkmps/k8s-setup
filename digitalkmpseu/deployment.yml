@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webpage
+  labels:
+    env: webpage
+spec:
+  selector:
+    matchLabels:
+      env: webpage
+  template:
+    metadata:
+      name: webpage
+    spec:
+      containers:
+      - image: 192.168.1.50:5555/digitalkmpseu:0.1
+        name: webpage
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: webpage-cert
+          mountPath: /etc/nginx/ssl
+          subPath: digitalkmpseu.csr
+        - name: webpage-key
+          mountPath: /etc/nginx/ssl
+          subPath: digitalkmpseu.key
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0  
+      volumes:
+      - name: webpage-cert
+        secret:
+          secretName: webpage-certs
