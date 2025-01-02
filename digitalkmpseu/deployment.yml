@@ -18,10 +18,15 @@ spec:
       - image: 192.168.1.50:5555/digitalkmpseu:0.1
         name: webpage
         ports:
-        - containerPort: 8080
+          - containerPort: 80
+            protocol: TCP
+          - containerPort: 443
+            protocol: TCP
         volumeMounts:
         - name: webpage-certs
           mountPath: /etc/nginx/ssl
+        - name: nginx-conf
+          mountPath: /etc/nginx/conf.d
         securityContext:
           allowPrivilegeEscalation: false
           runAsUser: 0  
@@ -29,3 +34,6 @@ spec:
       - name: webpage-certs
         secret:
           secretName: webpage-certs
+      - name: nginx-conf
+        secret:
+          secretName: nginx-conf
